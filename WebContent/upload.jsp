@@ -86,7 +86,7 @@
         	{
 	            /*Find out the operating system*/
 	                   boolean osIsNux = false;
-	                   if(System.getProperty("os.name").toLowerCase().contains("nux")||System.getProperty("os.name").toLowerCase().contains("nix"))
+	                   if(System.getProperty("os.name").toLowerCase().contains("nux")||System.getProperty("os.name").toLowerCase().contains("nix")||System.getProperty("os.name").toLowerCase().contains("mac"))
 	                	   osIsNux = true;
 	       %>
 	            <h2>Amazon EC2 Instances:</h2>
@@ -318,9 +318,9 @@
 	    	if(osIsNux)
 	    	{
 	    		if(ec2Bool)
-	    			command = "scp -o StrictHostKeyChecking=no -i "+key+" ec2-user@"+param[0]+":"+path+" "+dest;
+	    			command = "scp -o StrictHostKeyChecking=no -i \""+key+"\" ec2-user@"+param[0]+":\""+path+"\" \""+dest+"\"";
 	    		else
-	    			command = "scp -o StrictHostKeyChecking=no -i "+key+" "+path+param[1]+" ec2-user@"+param[0]+":"+dest;
+	    			command = "scp -o StrictHostKeyChecking=no -i \""+key+"\" \""+path+param[1]+"\" ec2-user@"+param[0]+":\""+dest+"\"";
 	    	}
 	    	else
 	    	{
