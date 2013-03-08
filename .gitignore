@@ -1,7 +1,7 @@
 *.class
 
 # Package Files #
-*.war
+*.ear
 
 # eclipse specific git ignore
 *.pydevproject
